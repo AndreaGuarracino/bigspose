@@ -13,7 +13,7 @@ A command-line tool for efficiently transposing large TSV (Tab-Separated Values)
 1. Ensure you have Rust and Cargo installed (https://rustup.rs/)
 2. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/bigspose
+   git clone https://github.com/AndreaGuarracino/bigspose
    cd bigspose
    ```
 3. Build and install using Cargo:
