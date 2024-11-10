@@ -1,5 +1,5 @@
 use clap::{Arg, Command};
-use csv::{ReaderBuilder, WriterBuilder, StringRecord};
+use csv::{ReaderBuilder, WriterBuilder};
 use std::error::Error;
 use std::fs::File;
 
@@ -7,9 +7,6 @@ fn transpose_tsv(input_path: &str, output_path: &str) -> Result<(), Box<dyn Erro
     // Open the input file and create a CSV reader
     let file = File::open(input_path)?;
     let mut rdr = ReaderBuilder::new().delimiter(b'\t').has_headers(false).from_reader(file);
-
-    // Read the headers separately
-    let headers = rdr.headers()?.clone();
 
     // Read all records into a vector of vectors (matrix)
     let mut matrix: Vec<Vec<String>> = Vec::new();
